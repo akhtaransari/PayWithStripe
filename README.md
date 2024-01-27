@@ -6,7 +6,6 @@ PayWithStripe is a Java Spring Boot backend service designed to facilitate integ
 - [Dockerized Application](#dockerized-application)
 - [Prerequisites](#prerequisites)
 - [Build and Run the Application](#build-and-run-the-application)
-- [Stopping the Application](#stopping-the-application)
 - [Requirements](#requirements)
 - [API Endpoints](#api-endpoints)
 - [Service Implementation](#service-implementation)
@@ -20,51 +19,48 @@ This repository contains a Dockerized application named "PayWithStripe." The app
 
 ## Prerequisites
 
-Before you begin, ensure you have the following prerequisites installed on your system:
+Before running the application, ensure you have the following prerequisites:
 
-- Docker: [Get Docker](https://docs.docker.com/get-docker/)
+1. Java Development Kit (JDK) installed.
+2. Maven for building the Spring Boot project.
+3. Docker for containerization.
 
 ## Build and Run the Application
 
 To build and run the application, follow these steps:
 
-1. **Clone the repository:**
+1. Build the Spring Boot project using Maven:
+   ```bash
+   make build-project
+   ```
 
-    ```bash
-    git clone https://github.com/your-username/paywithstripe.git
-    ```
+2. Build the Docker image:
+   ```bash
+   make build
+   ```
 
-2. **Navigate to the project directory:**
+3. Run the Docker container:
+   ```bash
+   make run
+   ```
 
-    ```bash
-    cd paywithstripe
-    ```
+   This will start the application and expose it on port 8000.
 
-3. **Build the Docker image:**
+4. To stop and remove the Docker container:
+   ```bash
+   make stop
+   ```
 
-    ```bash
-    make build
-    ```
+Alternatively, you can perform all the above actions in a single command:
+   ```bash
+   make build-and-run
+   ```
 
-4. **Run the Docker container:**
+Make sure you have Docker installed and the necessary dependencies for building the project.
 
-    ```bash
-    make run
-    ```
+Note: The `make build-and-run` command performs all actions, including building the project, building the Docker image, and running the container. Make sure to run this command to execute all necessary steps.
 
-    This will start the application and expose it on port 8080.
-
-5. **Access the application:**
-
-    Open your web browser and go to [http://localhost:8080](http://localhost:8080) to access the PayWithStripe application.
-
-## Stopping the Application
-
-To stop the application and remove the Docker container, run:
-
-```bash
-make stop
-```
+For more details on individual targets, you can refer to the provided Makefile.
 
 ## Requirements
 
@@ -160,9 +156,7 @@ The `PayWithStripeApplicationTests` class contains test cases for the functional
 
 #### Configuration
 
-The test class is annotated with `@
-
-SpringBootTest`, indicating that it is a Spring Boot test. It also uses `@MockBean` to create a mock instance of `StripeServiceImplement` for testing.
+The test class is annotated with `@SpringBootTest`, indicating that it is a Spring Boot test. It also uses `@MockBean` to create a mock instance of `StripeServiceImplement` for testing.
 
 ```java
 @SpringBootTest
