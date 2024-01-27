@@ -1,0 +1,10 @@
+stripe:
+  secret:
+    key: your-api-key-goes-here
+logging:
+  level:
+    root: WARN
+    com.portone : TRACE
+  file:
+    path: .
+    name: PayWithStripe.log
