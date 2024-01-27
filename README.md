@@ -1,6 +1,6 @@
-# PayWithStripe
+# PayWithStripe - Java Spring Boot
 
-PayWithStripe is a backend service designed to facilitate integration with the Stripe Payment Gateway. This project implements backend APIs for creating, capturing, refunding payment intents, and fetching a list of payment intents.
+PayWithStripe is a Java Spring Boot backend service designed to facilitate integration with the Stripe Payment Gateway. This project implements backend APIs for creating, capturing, refunding payment intents, and fetching a list of payment intents.
 
 ## Table of Contents
 - [Requirements](#requirements)
@@ -12,9 +12,8 @@ PayWithStripe is a backend service designed to facilitate integration with the S
 
 ## Requirements
 
-- Implement backend APIs for Stripe Payment Gateway integration.
-- Use the Go Language for implementation or choose another language if you can complete it faster.
-- Create a sandbox account on Stripe to obtain access and secret keys.
+- Implement backend APIs for Stripe Payment Gateway integration using Java Spring Boot.
+- Create a  account on Stripe to obtain access and secret keys.
 - Implement the following APIs:
 
 ### API Endpoints
@@ -24,11 +23,11 @@ PayWithStripe is a backend service designed to facilitate integration with the S
     - Request Body: [PaymentDetails](#payment-details)
 
 2. **Capture the Created Intent**
-    - Endpoint: `POST /api/v1/capture_intent/:id`
+    - Endpoint: `POST /api/v1/capture_intent/{id}`
     - Path Variable: `id` - ID of the created intent
 
 3. **Create a Refund for the Created Intent**
-    - Endpoint: `POST /api/v1/create_refund/:id`
+    - Endpoint: `POST /api/v1/create_refund/{id}`
     - Path Variable: `id` - ID of the created intent
 
 4. **Get a List of All Intents**
@@ -45,7 +44,7 @@ PayWithStripe is a backend service designed to facilitate integration with the S
 
 ### StripeServiceImplement
 
-The `StripeServiceImplement` class is responsible for interacting with the Stripe API to handle payment intents. It implements the `StripeServiceInterface` for creating, capturing, refunding payment intents, and fetching a list of payment intents.
+The `StripeServiceImplement` class is a Spring Service responsible for interacting with the Stripe API to handle payment intents. It implements the `StripeServiceInterface` for creating, capturing, refunding payment intents, and fetching a list of payment intents.
 
 #### Methods
 
@@ -94,7 +93,7 @@ public class PaymentController {
 
 ### PayWithStripeApplicationTests
 
-The `PayWithStripeApplicationTests` class contains test cases for the functionality implemented in the application. These tests use JUnit and Mockito for unit testing.
+The `PayWithStripeApplicationTests` class contains test cases for the functionality implemented in the Spring Boot application. These tests use JUnit and Mockito for unit testing.
 
 #### Test Cases
 
@@ -105,7 +104,7 @@ The `PayWithStripeApplicationTests` class contains test cases for the functional
 
 #### Configuration
 
-The test class is annotated with `@SpringBootTest`, indicating that it is a Spring Boot test. It also uses `@Mock` to create a mock instance of `StripeServiceImplement` for testing.
+The test class is annotated with `@SpringBootTest`, indicating that it is a Spring Boot test. It also uses `@MockBean` to create a mock instance of `StripeServiceImplement` for testing.
 
 ```java
 @SpringBootTest
@@ -122,14 +121,13 @@ Ensure that you have configured your Stripe secret key in the `application.prope
 
 1. [Stripe API Docs](https://stripe.com/docs/api/payment_intents)
 2. [Payment Intents](https://stripe.com/docs/payments/payment-intents)
-3. [Stripe Go SDK](https://github.com/stripe/stripe-go)
-4. [Stripe Other Language SDKs](https://github.com/stripe)
-5. [Setting up a Simple Backend in Golang](https://github.com/gorilla/mux)
+3. [Stripe Java SDK](https://github.com/stripe/stripe-java)
+4. [Setting up a Simple Backend in Spring Boot](https://spring.io/guides/gs/spring-boot/)
+5. [Testing in Spring Boot](https://spring.io/guides/gs/testing-web/)
 
 Additional reference links for building and testing REST APIs:
 
-- [Building and Testing a REST API in Golang](https://kelvinsp.medium.com/building-and-testing-a-rest-api-in-golang-using-gorilla-mux-and-mysql-1f0518818ff6)
-- [REST API with Golang and Mux](https://hugo-johnsson.medium.com/rest-api-with-golang-and-mux-e934f581b8b5)
-- [Go Lang REST API using Gorilla Mux](https://medium.com/@radadiyasunny970/go-lang-rest-api-using-gorilla-mux-a7dafbb64214)
+- [Building and Testing a REST API in Spring Boot](https://www.baeldung.com/spring-boot-testing)
+- [RESTful Web Services with Spring Boot](https://www.baeldung.com/spring-boot-rest-api-tutorial)
 
 Feel free to adapt and customize the information based on your project's specific needs.
