@@ -3,6 +3,10 @@
 PayWithStripe is a Java Spring Boot backend service designed to facilitate integration with the Stripe Payment Gateway. This project implements backend APIs for creating, capturing, refunding payment intents, and fetching a list of payment intents.
 
 ## Table of Contents
+- [Dockerized Application](#dockerized-application)
+- [Prerequisites](#prerequisites)
+- [Build and Run the Application](#build-and-run-the-application)
+- [Stopping the Application](#stopping-the-application)
 - [Requirements](#requirements)
 - [API Endpoints](#api-endpoints)
 - [Service Implementation](#service-implementation)
@@ -10,10 +14,62 @@ PayWithStripe is a Java Spring Boot backend service designed to facilitate integ
 - [Configuration](#configuration)
 - [References](#references)
 
+## Dockerized Application
+
+This repository contains a Dockerized application named "PayWithStripe." The application can be built and run using the provided Makefile.
+
+## Prerequisites
+
+Before you begin, ensure you have the following prerequisites installed on your system:
+
+- Docker: [Get Docker](https://docs.docker.com/get-docker/)
+
+## Build and Run the Application
+
+To build and run the application, follow these steps:
+
+1. **Clone the repository:**
+
+    ```bash
+    git clone https://github.com/your-username/paywithstripe.git
+    ```
+
+2. **Navigate to the project directory:**
+
+    ```bash
+    cd paywithstripe
+    ```
+
+3. **Build the Docker image:**
+
+    ```bash
+    make build
+    ```
+
+4. **Run the Docker container:**
+
+    ```bash
+    make run
+    ```
+
+    This will start the application and expose it on port 8080.
+
+5. **Access the application:**
+
+    Open your web browser and go to [http://localhost:8080](http://localhost:8080) to access the PayWithStripe application.
+
+## Stopping the Application
+
+To stop the application and remove the Docker container, run:
+
+```bash
+make stop
+```
+
 ## Requirements
 
 - Implement backend APIs for Stripe Payment Gateway integration using Java Spring Boot.
-- Create a  account on Stripe to obtain access and secret keys.
+- Create an account on Stripe to obtain access and secret keys.
 - Implement the following APIs:
 
 ### API Endpoints
@@ -104,7 +160,9 @@ The `PayWithStripeApplicationTests` class contains test cases for the functional
 
 #### Configuration
 
-The test class is annotated with `@SpringBootTest`, indicating that it is a Spring Boot test. It also uses `@MockBean` to create a mock instance of `StripeServiceImplement` for testing.
+The test class is annotated with `@
+
+SpringBootTest`, indicating that it is a Spring Boot test. It also uses `@MockBean` to create a mock instance of `StripeServiceImplement` for testing.
 
 ```java
 @SpringBootTest
@@ -129,5 +187,3 @@ Additional reference links for building and testing REST APIs:
 
 - [Building and Testing a REST API in Spring Boot](https://www.baeldung.com/spring-boot-testing)
 - [RESTful Web Services with Spring Boot](https://www.baeldung.com/spring-boot-rest-api-tutorial)
-
-Feel free to adapt and customize the information based on your project's specific needs.
