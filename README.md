@@ -1,4 +1,4 @@
-# PayWithStripe - Java Spring Boot
+# PayWithStripe | Java Spring Boot
 
 PayWithStripe is a Java Spring Boot backend service designed to facilitate integration with the Stripe Payment Gateway. This project implements backend APIs for creating, capturing, refunding payment intents, and fetching a list of payment intents.
 
