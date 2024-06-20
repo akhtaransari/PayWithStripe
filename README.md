@@ -12,6 +12,8 @@ PayWithStripe is a Java Spring Boot backend service designed to facilitate integ
 - [Testing](#testing)
 - [Configuration](#configuration)
 - [References](#references)
+- [Postman Collection](#postman-collection)
+
 
 ## Dockerized Application
 
@@ -181,3 +183,7 @@ Additional reference links for building and testing REST APIs:
 
 - [Building and Testing a REST API in Spring Boot](https://www.baeldung.com/spring-boot-testing)
 - [RESTful Web Services with Spring Boot](https://www.baeldung.com/spring-boot-rest-api-tutorial)
+
+## Postman Collection
+
+For testing the APIs, you can use the following Postman collection: [PayWithStripe Postman Collection](https://www.postman.com/docking-module-saganist-20654777/workspace/paywithstripe/overview)
